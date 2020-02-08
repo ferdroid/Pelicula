@@ -3,7 +3,7 @@ import { PeliculaService } from '../../services/pelicula.service';
 import { MoviesModel } from '../../models/movies.model';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../app.reducer';
+import { AppState } from '../../app.store';
 import { Subscription } from 'rxjs';
 
 import * as buscarActions from '../../store/actions/buscar.action';

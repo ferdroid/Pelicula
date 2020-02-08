@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MoviesModel } from '../../models/movies.model';
 import { Store } from '@ngrx/store';
-import { AppState } from '../../app.reducer';
+import { AppState } from '../../app.store';
 
 import * as homeActions from '../../store/actions/home.action';
 import { filter, map, distinct } from 'rxjs/operators';

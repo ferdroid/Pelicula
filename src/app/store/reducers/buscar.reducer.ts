@@ -1,6 +1,6 @@
 import * as fromBuscar from '../actions/buscar.action';
 import { MoviesModel } from '../../models/movies.model';
-import { AppState } from '../../app.reducer';
+import { AppState } from '../../app.store';
 
 export interface BuscarState {
     loadingBuscarPelicula: boolean;

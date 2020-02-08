@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreModule } from '@ngrx/store';
-import { appReducers } from './app.reducer';
+import { appReducers } from './app.store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { EffectsModule } from '@ngrx/effects';

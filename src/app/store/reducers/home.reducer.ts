@@ -1,6 +1,6 @@
 import * as fromHome from '../actions/home.action';
 import { MoviesModel } from '../../models/movies.model';
-import { AppState } from '../../app.reducer';
+import { AppState } from '../../app.store';
 
 export interface HomeState {
     loadingPopulares: boolean;
