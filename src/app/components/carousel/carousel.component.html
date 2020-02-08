@@ -1,0 +1,31 @@
+<div id="{{ name }}" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+
+        <li [attr.data-target]="'#' + name" [attr.data-slide-to]="i"
+            *ngFor="let pelicula of peliculas; let i = index" [ngClass]="{'active': i === 0}"></li>
+    </ol>
+    <div class="carousel-inner" >
+        <div class="carousel-item" data-interval="5000" [routerLink]="['/peliculas', pelicula.id]"
+            *ngFor="let pelicula of peliculas; let i = index" [ngClass]="{'active': i === 0}">
+            <img class="d-block w-100"  [alt]="pelicula.original_title" 
+                *ngIf="pelicula.backdrop_path" [src]="urlImage + pelicula.backdrop_path">
+            <img class="d-block w-100"  [alt]="pelicula.original_title" 
+                *ngIf="!pelicula.backdrop_path" src="./assets/img/none.jpg">  
+            <div class="carousel-caption d-none d-md-block">
+                <h4 *ngIf="pelicula.title" class="title">{{ pelicula.title }}</h4>
+                <div>
+                    <div *ngIf="pelicula.overview" class="text-movie">{{ pelicula.overview }}</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<a class="carousel-control-prev" [href]="'#' + name" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next" [href]="'#' + name" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>

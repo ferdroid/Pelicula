@@ -1,0 +1,31 @@
+<div class="container-fluid pt-4">
+
+    <div class="input-group mb-5">
+        <input type="text" class="form-control" placeholder="Buscar peliculas" #textPeli (keyup)="buscarPelicula( $event )">
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="button">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+
+    <app-loader *ngIf="isLoader"></app-loader>
+
+
+    <div *ngIf="!isLoader" class="row">
+        <div class="card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2" 
+            *ngFor="let pelicula of peliculas">
+            <img *ngIf="pelicula.poster_path" [src]="urlImage + pelicula.poster_path" class="card-img-top" [alt]="pelicula.title"
+                (click)="irPelicula(pelicula.id)">
+            <img *ngIf="!pelicula.poster_path" src="./assets/img/none-v.jpg" class="card-img-top" [alt]="pelicula.title"
+                (click)="irPelicula(pelicula.id)">
+            <div class="card-body">
+                <h2>{{ pelicula.title }}</h2>
+                <p class="card-text">
+                    {{ pelicula.overview }}
+                </p>
+            </div>
+        </div>
+    </div>
+
+</div>

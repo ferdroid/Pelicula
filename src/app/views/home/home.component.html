@@ -1,0 +1,35 @@
+
+<div class="container mt-4 mb-5">
+
+    <h1>Peliculas Populares</h1>
+
+    <div class="position-relative">
+        <app-loader *ngIf="isLoaderPP"></app-loader>
+        <app-carousel *ngIf="!isLoaderPP" [peliculas]="peliculasPopulares" [name]="'populares'"></app-carousel>
+    </div>
+
+</div>
+
+<div class="container mt-4 mb-5">
+
+    <h1>Peliculas Actuales</h1>
+
+    <div class="position-relative">
+        <app-loader *ngIf="isLoaderPA"></app-loader>
+        <app-carousel *ngIf="!isLoaderPA" [peliculas]="peliculasActuales" [name]="'actuales'"></app-carousel>
+    </div>
+
+</div>
+
+
+<div class="container mt-4 mb-5">
+
+    <h1>Peliculas para Niños</h1>
+
+    <div class="position-relative">
+        <app-loader *ngIf="isLoaderPN"></app-loader>
+        <app-carousel *ngIf="!isLoaderPN" [peliculas]="peliculasNinos" [name]="'ninos'"></app-carousel>
+    </div>
+
+</div>
+   
